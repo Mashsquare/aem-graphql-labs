@@ -1,0 +1,26 @@
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: { default: "AEM GraphQL Labs", template: "%s · AEM GraphQL Labs" },
+  description: "Hands-on GraphQL labs for Adobe Experience Manager headless development, with a mock AEM backend.",
+};
+
+export default function RootLayout({ children }: LayoutProps<"/">) {
+  return (
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+      <body className="min-h-full font-sans">{children}</body>
+    </html>
+  );
+}
