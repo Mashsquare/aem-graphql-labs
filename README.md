@@ -126,6 +126,8 @@ AEM_AUTHOR_TOKEN=<local development token from the Developer Console>
 
 You need the WKND models and content (or your own, adjusting the queries), GraphQL endpoints enabled for the configuration, and CORS configured for `http://localhost:3000` if you call Publish from the browser.
 
+> **Secrets:** every credential in `.env.example` (`admin`/`admin`, `mock-local-dev-token`, `lab-preview-secret`, `mock-webhook-secret`) is a placeholder for the local mock AEM, not a real secret. Put real values in `.env.local`, which is git-ignored, and never prefix credentials with `NEXT_PUBLIC_`.
+
 ## Troubleshooting
 
 - **Ports 4502/4503 in use** — another mock (or a real local AEM SDK) is running. Stop it, or set `MOCK_AEM_AUTHOR_PORT` / `MOCK_AEM_PUBLISH_PORT` and the matching `AEM_*_HOST` variables.
